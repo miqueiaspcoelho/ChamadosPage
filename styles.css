@@ -30,7 +30,6 @@ p {
   background-color: #FFFDDC;
   height: 100vh;
   min-width: 150px;
-  /*border: solid 1px black;*/
   position:fixed;
 }
 
@@ -68,7 +67,6 @@ p {
 
 #main-doc .main-section{
   background-color: #FFFDDC95;
-  /*border: solid 1px blue;*/
   flex-grow:1;
   margin-left:25%;
   padding: 20px;
@@ -92,5 +90,4 @@ p {
   }
 }
 
-** end of undefined **
 
