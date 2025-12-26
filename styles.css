@@ -1,93 +1,207 @@
-html{
+/* Reset básico */
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
   scroll-behavior: smooth;
 }
 
-body{
-    display:flex;
-    font-family: Trebuchet MS;
-    margin:0;
-    padding:0;
+
+/* Fonte e cores base */
+body {
+  font-family: 'Segoe UI', Tahoma, sans-serif;
+  background-color: #f4f6f8;
+  color: #333;
+  line-height: 1.6;
+  display: flex;
 }
 
-code {
-  color: red;
-  font-weight: bold;
-}
-
-li {
- list-style: none; 
-}
-
-p {
-  text-align: justify;
-}
-
-:target {
-  scroll-margin-top: .8em;
-}
-
+/* =========================
+   NAVBAR (menu lateral)
+   ========================= */
 #navbar {
-  background-color: #FFFDDC;
+  position: fixed;
+  left: 0;
+  top: 0;
+  width: 260px;
   height: 100vh;
-  min-width: 150px;
-  position:fixed;
-}
-
-
-#navbar a {
-  text-decoration: none;
-  color: #151B87;
-  border: transparent 1px gray;
-  border-bottom: solid 1px #AA8E3980;
-  border-left: solid 1px #AA8E39;
-  border-radius: 10px;
-  display: grid;
-  margin-bottom: 25px;
-  padding: 10px;
-}
-#navbar a:hover {
-  font-weight: bold;
-  background-color: #5D2971;
-  color: white;
-  transition: 100ms;
-  transform: scale(1.1) translate(20px, -10%);
-}
-
-#navbar header{
-  margin-bottom: 50px;
-  font-size: 25;
-  font-weight: bold;
-  color: #151B87;
-}
-
-#navbar, #main-doc{
-  border: transparent 1px black;
-  padding: 10px;
-}
-
-#main-doc .main-section{
-  background-color: #FFFDDC95;
-  flex-grow:1;
-  margin-left:25%;
+  background-color: #1e293b;
   padding: 20px;
-  min-width: 300px;
-  
+  overflow-y: auto;
 }
 
-#main-doc section header{
-  font-size: 20;
-  padding: 5px;
-}
-
-
-#navbar header, .main-section header{
+#navbar header {
+  color: #ffffff;
+  font-size: 1.4rem;
+  font-weight: bold;
+  margin-bottom: 20px;
   text-align: center;
 }
 
-@media (max-width: 600px) {
-  #main{
-    font-size: 10;
+.nav-link {
+  display: block;
+  padding: 10px 15px;
+  margin-bottom: 8px;
+  text-decoration: none;
+  color: #cbd5e1;
+  border-radius: 6px;
+  transition:
+    transform 0.25s ease,
+    background-color 0.25s ease,
+    color 0.25s ease;
+}
+
+.nav-link:hover {
+  background-color: #334155;
+  color: #ffffff;
+  transform: scale(1.05);
+}
+
+/* =========================
+   CONTEÚDO PRINCIPAL
+   ========================= */
+#content {
+  display: flex;
+  flex-direction: column;
+  margin-left: 280px;
+  width: 100%;
+}
+.capa-image {
+  width: 100%;
+  max-width: 500px;
+  margin: 0 auto 40px;
+  display: block;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.1);
+}
+
+#main-doc {
+  /* margin-left: 280px; */
+  padding: 40px;
+  max-width: 1000px;
+}
+
+/* Seções */
+.main-section {
+  background: #ffffff;
+  padding: 30px;
+  margin-bottom: 40px;
+  border-radius: 10px;
+  box-shadow: 0 8px 20px rgba(0, 0, 0, 0.05);
+}
+
+/* Títulos das seções */
+.main-section header {
+  font-size: 1.8rem;
+  margin-bottom: 20px;
+  color: #0f172a;
+  border-bottom: 3px solid #2563eb;
+  display: inline-block;
+  padding-bottom: 5px;
+}
+
+/* Parágrafos */
+.main-section p {
+  margin-bottom: 15px;
+  text-align: justify;
+}
+
+/* Links */
+.main-section a {
+  color: #2563eb;
+  font-weight: 500;
+  text-decoration: none;
+}
+
+.main-section a:hover {
+  text-decoration: underline;
+}
+
+/* Código */
+code {
+  background-color: #e5e7eb;
+  padding: 3px 6px;
+  border-radius: 4px;
+  font-family: Consolas, monospace;
+  font-size: 0.95rem;
+}
+
+/* Destaque final */
+strong {
+  color: #1e40af;
+}
+
+/* =========================
+   RESPONSIVIDADE
+   ========================= */
+@media (max-width: 900px) {
+  #navbar {
+    position: relative;
+    width: 100%;
+    height: auto;
+  }
+
+  #content {
+    margin-left: 0;
+  }
+
+  #main-doc {
+    padding: 20px;
   }
 }
 
 
+/* =========================
+   FOOTER
+   ========================= */
+#footer {
+  /* margin-left: 280px; */
+  background-color: #334155;
+  color: #cbd5e1;
+  padding: 30px 20px;
+  text-align: center;
+  border: 1px solid transparent;
+  border-radius: 5px;
+  max-width: 95%;
+  font-size: 0.5rem;
+}
+
+#footer p {
+  margin-bottom: 10px;
+}
+
+#footer strong {
+  color: #ffffff;
+}
+
+.footer-links a {
+  color: #60a5fa;
+  text-decoration: none;
+  font-weight: 500;
+  margin: 0 5px;
+  transition: color 0.3s;
+}
+
+.footer-links a:hover {
+  color: #93c5fd;
+  text-decoration: underline;
+}
+
+.footer-copy {
+  color: #94a3b8;
+}
+
+/* Footer responsivo */
+@media (max-width: 900px) {
+  #footer {
+    margin-left: 0;
+  }
+}
+#main-doc,
+.footer-container {
+  max-width: 1000px;
+  margin: 0 auto;
+}
